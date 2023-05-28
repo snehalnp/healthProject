@@ -1,6 +1,6 @@
 Health Tracking for Elders
 
-There are multiple things that are beneficial to live a healthier and better life for 65+ years old. I have implemented some (tracking repvious health records, exercise and activity tracking, nutritional and meal planning) of the below mentioned using Django and SQL. 
+There are multiple things that are beneficial to live a healthier and better life for 65+ years old. I have tries implementing some (tracking repvious health records, exercise and activity tracking, nutritional and meal planning) of the below mentioned using Django and SQL. 
 
 1) Tracking Previous Health Records: 
    This enables the users to track their health parameters, such as daily steps, heart rate, sleep patterns and blood pressure.
