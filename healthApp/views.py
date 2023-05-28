@@ -10,7 +10,8 @@ from .models import Food, CalorieIntake
 from .forms import CalorieIntakeForm
 from .models import Exercise, Activity
 from .forms import ActivityForm
-
+from .models import HealthRecord
+from .forms import HealthRecordForm
 
 
 
@@ -63,12 +64,6 @@ def register_page(request):
             messages.warning(request, "Your Password does not match")
 
     return render(request,'register.html')
-
-
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
-from .models import HealthRecord
-from .forms import HealthRecordForm
 
 
 @login_required
