@@ -1,0 +1,19 @@
+
+{% block content %}
+  <h2>Activity Log</h2>
+  
+  <form method="POST" action="{% url 'activity_log' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Activity</button>
+  </form>
+  
+  <h3>Previous Activity Records:</h3>
+  <ul>
+    {% for record in activity_records %}
+      <li>{{ record.date }} - Exercise: {{ record.exercise.name }}, Duration: {{ record.duration }} minutes</li>
+    {% empty %}
+      <li>No records found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,19 @@
+
+{% block content %}
+  <h2>Calorie Intake</h2>
+  
+  <form method="POST" action="{% url 'calorie_intake' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Intake</button>
+  </form>
+  
+  <h3>Previous Intake Records:</h3>
+  <ul>
+    {% for record in intake_records %}
+      <li>{{ record.date }} - Food: {{ record.food }}, Quantity: {{ record.quantity }}</li>
+    {% empty %}
+      <li>No records found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

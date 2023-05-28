@@ -1,0 +1,22 @@
+
+{% block content %}
+  <h2>Health Records</h2>
+  
+  <form method="POST" action="{% url 'health_record' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Record</button>
+  </form>
+  
+  <h3>Previous Records:</h3>
+  <ul>
+    {% for record in records %}
+      <li> Date recorded: {{ record.date }} </li>
+      <li>Weight: {{ record.weight }}</li>
+      <li>Heart Rate: {{ record.heart_rate }}</li>
+      <li>Sleep Hours: {{record.sleep_hours}}</li>
+    {% empty %}
+      <li>No records found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
